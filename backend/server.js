@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
+const categoryRoute = require("./routes/categories");
 
 dotenv.config();
 app.use(express.json());
@@ -21,6 +22,7 @@ mongoose.connect(URI, {
 
  app.use("/api/auth", authRoute);
  app.use("/api/users", userRoute);
+ app.use("/api/categories", categoryRoute);
 
 
 app.listen("5000", () => {
